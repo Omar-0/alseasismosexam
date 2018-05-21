@@ -127,6 +127,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 if let json = response.data {
                     let data = JSON(data: json)
                     self.parse(json: data)
+                    
+                    let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapViewController") as UIViewController
+                    // .instantiatViewControllerWithIdentifier() returns AnyObject! this must be downcast to utilize it
+                    
+                    self.present(viewController, animated: false, completion: nil)
+                    
                 }
                 
                 

@@ -91,5 +91,40 @@
             </objects>
             <point key="canvasLocation" x="41" y="698"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="1Oa-rE-KV4">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="yZw-a7-ac0" customClass="MapViewController" customModule="alsea_test_earthquake" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="28w-UL-gxR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MRu-k7-YI6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9P-wt-atc">
+                                <rect key="frame" x="170" y="617" width="34" height="30"/>
+                                <state key="normal" title="Back"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MRu-k7-YI6" firstAttribute="bottom" secondItem="3eB-OM-DqZ" secondAttribute="bottom" id="4lF-5o-POB"/>
+                            <constraint firstItem="MRu-k7-YI6" firstAttribute="leading" secondItem="28w-UL-gxR" secondAttribute="leading" id="5Uc-vr-5Ij"/>
+                            <constraint firstAttribute="bottom" secondItem="W9P-wt-atc" secondAttribute="bottom" constant="20" symbolic="YES" id="NbC-iD-bWX"/>
+                            <constraint firstItem="W9P-wt-atc" firstAttribute="centerX" secondItem="MRu-k7-YI6" secondAttribute="centerX" id="PqD-zF-LMY"/>
+                            <constraint firstAttribute="trailing" secondItem="MRu-k7-YI6" secondAttribute="trailing" id="cbH-rG-Q28"/>
+                            <constraint firstItem="MRu-k7-YI6" firstAttribute="top" secondItem="28w-UL-gxR" secondAttribute="top" id="nLy-cd-nUX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3eB-OM-DqZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="MRu-k7-YI6" id="xEP-GJ-uvu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ZI-zf-KNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="912.79999999999995" y="644.52773613193403"/>
+        </scene>
     </scenes>
 </document>
