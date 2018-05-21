@@ -84,4 +84,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate{
         print("Error \(error)")
     }
     
+    @IBAction func onBackClick(_ sender: UIButton) {
+        print("Going back")
+        self.dismiss(animated: true, completion: nil)
+
+    }
 }
