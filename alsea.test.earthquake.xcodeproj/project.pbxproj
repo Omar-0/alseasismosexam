@@ -12,9 +12,11 @@
 		2B273C1920B342A00080326D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B273C1720B342A00080326D /* Main.storyboard */; };
 		2B273C1B20B342A00080326D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B273C1A20B342A00080326D /* Assets.xcassets */; };
 		2B273C1E20B342A00080326D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B273C1C20B342A00080326D /* LaunchScreen.storyboard */; };
+		F028AF48C8300669DDA1220E /* Pods_alsea_test_earthquake.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2BEE4F77D591B54A82D1E4 /* Pods_alsea_test_earthquake.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		071CC354173C5FC7056C9B19 /* Pods-alsea.test.earthquake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-alsea.test.earthquake.release.xcconfig"; path = "Pods/Target Support Files/Pods-alsea.test.earthquake/Pods-alsea.test.earthquake.release.xcconfig"; sourceTree = "<group>"; };
 		2B273C1020B342A00080326D /* alsea.test.earthquake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alsea.test.earthquake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B273C1320B342A00080326D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B273C1520B342A00080326D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		2B273C1A20B342A00080326D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B273C1D20B342A00080326D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B273C1F20B342A00080326D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BB6B88A36ED7ECCAE596FFA /* Pods-alsea.test.earthquake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-alsea.test.earthquake.debug.xcconfig"; path = "Pods/Target Support Files/Pods-alsea.test.earthquake/Pods-alsea.test.earthquake.debug.xcconfig"; sourceTree = "<group>"; };
+		FC2BEE4F77D591B54A82D1E4 /* Pods_alsea_test_earthquake.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_alsea_test_earthquake.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F028AF48C8300669DDA1220E /* Pods_alsea_test_earthquake.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				2B273C1220B342A00080326D /* alsea.test.earthquake */,
 				2B273C1120B342A00080326D /* Products */,
+				F6C7BDF85BB297ACBA0BCCC4 /* Pods */,
+				ACA649802622F4553F330A5C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = alsea.test.earthquake;
 			sourceTree = "<group>";
 		};
+		ACA649802622F4553F330A5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC2BEE4F77D591B54A82D1E4 /* Pods_alsea_test_earthquake.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F6C7BDF85BB297ACBA0BCCC4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4BB6B88A36ED7ECCAE596FFA /* Pods-alsea.test.earthquake.debug.xcconfig */,
+				071CC354173C5FC7056C9B19 /* Pods-alsea.test.earthquake.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2B273C2220B342A00080326D /* Build configuration list for PBXNativeTarget "alsea.test.earthquake" */;
 			buildPhases = (
+				B52A5EAA6E7622B1E09C7BE8 /* [CP] Check Pods Manifest.lock */,
 				2B273C0C20B342A00080326D /* Sources */,
 				2B273C0D20B342A00080326D /* Frameworks */,
 				2B273C0E20B342A00080326D /* Resources */,
+				E8F63261F4387ED6D8426DCA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,6 +156,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B52A5EAA6E7622B1E09C7BE8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-alsea.test.earthquake-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8F63261F4387ED6D8426DCA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-alsea.test.earthquake/Pods-alsea.test.earthquake-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-alsea.test.earthquake/Pods-alsea.test.earthquake-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2B273C0C20B342A00080326D /* Sources */ = {
@@ -272,29 +339,33 @@
 		};
 		2B273C2320B342A00080326D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BB6B88A36ED7ECCAE596FFA /* Pods-alsea.test.earthquake.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = alsea.test.earthquake/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.o.alsea-test-earthquake";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		2B273C2420B342A00080326D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 071CC354173C5FC7056C9B19 /* Pods-alsea.test.earthquake.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = alsea.test.earthquake/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.o.alsea-test-earthquake";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

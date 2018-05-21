@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -19,9 +20,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var newButton: UIButton!
     
     
-    var initialDate:String?
-    var finalDate:String?
-    var degrees:String?
+    var initialDate = ""
+    var finalDate = ""
+    var degrees = ""
     
     var pickerDataSource = ["5.0", "5.5", "6.5", "7.0", "7.5", "8.0", "8.5", "9.0", "9.5"];
     
@@ -95,6 +96,42 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     @IBAction func newOnClick(_ sender: UIButton) {
         print("new")
+        requestEarthquake()
+        
+    }
+    
+    
+    func requestEarthquake() {
+        var endPointURL: String = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=" + initialDate + "&endtime=" + finalDate + "&minmagnitude=" + degrees
+        print("url: " + endPointURL)
+        Alamofire.request(endPointURL)
+            .responseJSON { response in
+                guard response.result.error == nil else {
+                    print("error calling GET on /todos/1")
+                    print(response.result.error!)
+                    return
+                }
+                
+                guard let json = response.result.value as? [String: Any] else {
+                    print("didn't get todo object as JSON from API")
+                    if let error = response.result.error {
+                        print("Error: \(error)")
+                    }
+                    return
+                }
+                
+                print("RAW response is:")
+                print(json)
+                
+                // TODO unwrap JSON
+                guard let todoTitle = json["title"] as? String else {
+                    print("Could not get todo title from JSON")
+                    return
+                }
+                print("The title is: " + todoTitle)
+                
+                //TODO launch map View COntroller
+        }
     }
 }
 
