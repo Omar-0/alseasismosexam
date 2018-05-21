@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="alsea_test_earthquake" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" restorationIdentifier="Degrees" translatesAutoresizingMaskIntoConstraints="NO" id="nUW-iJ-5vW">
+                                <rect key="frame" x="0.0" y="20" width="375" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="dAp-Q8-sNG"/>
+                                </constraints>
+                            </pickerView>
+                            <datePicker contentMode="scaleToFill" restorationIdentifier="Dates" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ei1-QM-0Pl">
+                                <rect key="frame" x="0.0" y="252" width="375" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="548620070.23658097">
+                                    <!--2018-05-21 18:27:50 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="initialDateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="mAA-Uw-d01"/>
+                                </connections>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" restorationIdentifier="DatesUpper" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="1G8-hE-TXg">
+                                <rect key="frame" x="0.0" y="422" width="375" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="548620086.899405">
+                                    <!--2018-05-21 18:28:06 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="finalDateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="l34-pe-HNZ"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jq9-0T-5ez">
+                                <rect key="frame" x="16" y="617" width="30" height="30"/>
+                                <state key="normal" title="Last"/>
+                                <connections>
+                                    <action selector="lastOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ld9-xm-dOq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7If-fY-rqg">
+                                <rect key="frame" x="328" y="617" width="31" height="30"/>
+                                <state key="normal" title="New"/>
+                                <connections>
+                                    <action selector="newOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l61-gU-cdt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ei1-QM-0Pl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8h8-yo-zbJ"/>
+                            <constraint firstAttribute="bottom" secondItem="jq9-0T-5ez" secondAttribute="bottom" constant="20" symbolic="YES" id="BXc-xD-Wpn"/>
+                            <constraint firstItem="7If-fY-rqg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="GH8-XS-yNy"/>
+                            <constraint firstItem="jq9-0T-5ez" firstAttribute="top" secondItem="1G8-hE-TXg" secondAttribute="bottom" constant="33" id="Hbf-7A-rlG"/>
+                            <constraint firstItem="jq9-0T-5ez" firstAttribute="top" secondItem="7If-fY-rqg" secondAttribute="top" id="I5N-c9-ufN"/>
+                            <constraint firstItem="nUW-iJ-5vW" firstAttribute="trailing" secondItem="Ei1-QM-0Pl" secondAttribute="trailing" id="RLB-Vi-sfx"/>
+                            <constraint firstItem="jq9-0T-5ez" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="UtL-2L-X2v"/>
+                            <constraint firstItem="nUW-iJ-5vW" firstAttribute="leading" secondItem="Ei1-QM-0Pl" secondAttribute="leading" id="X0t-lD-nfL"/>
+                            <constraint firstItem="nUW-iJ-5vW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZXl-iN-jR1"/>
+                            <constraint firstItem="1G8-hE-TXg" firstAttribute="top" secondItem="Ei1-QM-0Pl" secondAttribute="bottom" constant="8" symbolic="YES" id="cHn-WI-J7l"/>
+                            <constraint firstAttribute="trailing" secondItem="nUW-iJ-5vW" secondAttribute="trailing" id="eWy-06-LBq"/>
+                            <constraint firstItem="Ei1-QM-0Pl" firstAttribute="leading" secondItem="1G8-hE-TXg" secondAttribute="leading" id="h6z-3H-IzZ"/>
+                            <constraint firstItem="Ei1-QM-0Pl" firstAttribute="top" secondItem="nUW-iJ-5vW" secondAttribute="bottom" constant="70" id="iww-kk-XJh"/>
+                            <constraint firstItem="Ei1-QM-0Pl" firstAttribute="trailing" secondItem="1G8-hE-TXg" secondAttribute="trailing" id="lPx-Gg-EMv"/>
+                            <constraint firstItem="jq9-0T-5ez" firstAttribute="baseline" secondItem="7If-fY-rqg" secondAttribute="baseline" id="ru2-Yj-Uvf"/>
+                            <constraint firstItem="nUW-iJ-5vW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="smr-Wu-HYr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="degressPicker" destination="nUW-iJ-5vW" id="YfE-g8-fxi"/>
+                        <outlet property="finalDatePicker" destination="1G8-hE-TXg" id="xD0-JA-EGQ"/>
+                        <outlet property="initialDatePicker" destination="Ei1-QM-0Pl" id="Qz6-RY-uZg"/>
+                        <outlet property="lastButton" destination="jq9-0T-5ez" id="BWM-k4-1Tb"/>
+                        <outlet property="newButton" destination="7If-fY-rqg" id="J6A-tt-vXI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="41" y="698"/>
+        </scene>
+    </scenes>
+</document>
