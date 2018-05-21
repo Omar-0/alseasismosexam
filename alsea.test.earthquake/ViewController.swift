@@ -126,10 +126,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 
                 if let json = response.data {
                     let data = JSON(data: json)
-                    self.parse(json: data)
+                    var sismos = self.parse(json: data)
                     
-                    let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapViewController") as UIViewController
+                    let viewController:MapViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapViewController") as UIViewController as! MapViewController
                     // .instantiatViewControllerWithIdentifier() returns AnyObject! this must be downcast to utilize it
+                    
+                    //viewController.sismos = sismos;
                     
                     self.present(viewController, animated: false, completion: nil)
                     
@@ -140,7 +142,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
    
-    func parse(json: JSON) {
+    func parse(json: JSON) -> [Sismo]{
         var earthquakes: [Sismo] = []
         for result in json["features"].arrayValue {
             print("Run Sismo")
@@ -150,6 +152,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             //petitions.append(obj)
             earthquakes.append( Sismo(magnitud: magnitude, latitude: lat, longitude: long) )
         }
+        
+        return earthquakes
     }
 }
 

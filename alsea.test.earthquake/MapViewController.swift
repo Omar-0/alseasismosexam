@@ -16,6 +16,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate{
     var locationManager:CLLocationManager!
     
     var currentLocation: CLLocationCoordinate2D?
+    
+    //var sismos: [Sismos]
 
     
     override func viewDidLoad() {
