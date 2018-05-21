@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -121,17 +122,46 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 }
                 
                 print("RAW response is:")
-                print(json)
+                //print(json)
                 
-                // TODO unwrap JSON
-                guard let todoTitle = json["title"] as? String else {
-                    print("Could not get todo title from JSON")
-                    return
+                if let json = response.data {
+                    let data = JSON(data: json)
+                    self.parse(json: data)
                 }
-                print("The title is: " + todoTitle)
+                
                 
                 //TODO launch map View COntroller
         }
+    }
+   
+    func parse(json: JSON) {
+        var earthquakes: [Sismo] = []
+        for result in json["features"].arrayValue {
+            print("Run Sismo")
+            let magnitude = result["properties"]["mag"].stringValue
+            let lat = result["geometry"]["coordinates"][0].stringValue
+            let long = result["geometry"]["coordinates"][1].stringValue
+            //petitions.append(obj)
+            earthquakes.append( Sismo(magnitud: magnitude, latitude: lat, longitude: long) )
+        }
+    }
+}
+
+class Sismo{
+    var magnitud = ""
+    var latitude = "0.0"
+    var longitude = "0.0"
+    
+    init(){
+        
+    }
+    
+    init(magnitud :String, latitude: String, longitude: String){
+        self.magnitud = magnitud
+        self.latitude = latitude
+        self.longitude = longitude
+        
+        print("Sismo: " +  magnitud + "(" + latitude.description + "," + longitude.description + ")")
     }
 }
 
