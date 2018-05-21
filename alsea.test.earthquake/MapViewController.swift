@@ -49,9 +49,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate{
             
             //3
             let annotation = MKPointAnnotation()
+            
             annotation.coordinate = location
             annotation.title = "Sismo"
             annotation.subtitle = sismo.magnitud
+            
+            
             mapView.addAnnotation(annotation)
         }
         
