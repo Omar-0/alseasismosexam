@@ -131,7 +131,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     let viewController:MapViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MapViewController") as UIViewController as! MapViewController
                     // .instantiatViewControllerWithIdentifier() returns AnyObject! this must be downcast to utilize it
                     
-                    //viewController.sismos = sismos;
+                    viewController.sismos = sismos;
                     
                     self.present(viewController, animated: false, completion: nil)
                     

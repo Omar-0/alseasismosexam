@@ -17,7 +17,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate{
     
     var currentLocation: CLLocationCoordinate2D?
     
-    //var sismos: [Sismos]
+    var sismos: [Sismo]?
 
     
     override func viewDidLoad() {
@@ -33,8 +33,29 @@ class MapViewController: UIViewController, CLLocationManagerDelegate{
             //locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
         }
+        fillAnnotations()
     }
     
+    func fillAnnotations() {
+        
+        for sismo in sismos! {
+            let location = CLLocationCoordinate2D(latitude: Double(sismo.latitude) ?? 0.0,
+                                                  longitude: Double(sismo.longitude) ?? 0.0)
+            
+            // 2
+            let span = MKCoordinateSpanMake(0.05, 0.05)
+            let region = MKCoordinateRegion(center: location, span: span)
+            //mapView.setRegion(region, animated: true)
+            
+            //3
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = location
+            annotation.title = "Sismo"
+            annotation.subtitle = sismo.magnitud
+            mapView.addAnnotation(annotation)
+        }
+        
+    }
     
     func determineMyCurrentLocation() {
         locationManager = CLLocationManager()
